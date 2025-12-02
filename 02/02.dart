@@ -23,7 +23,7 @@ bool isPart2Invalid(String str)
         var matches = true;
 
         for (int j = i; j < str.length; j += i) {
-            var end = j + i > str.length ? str.length : j + i;
+            var end = (j + i).clamp(0, str.length);
             if (pattern != str.substring(j, end)) {
                 matches = false;
                 break;
